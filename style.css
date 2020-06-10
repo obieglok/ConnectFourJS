@@ -1,0 +1,18 @@
+body{
+  text-align:center;
+}
+#connect4{
+  background-color: yellow;
+  display: inline-block;
+
+}
+.column{
+  width:70px;
+  height:70px;
+  display:inline-block;
+  /* ^theyll be all in line now^ not one under the other*/
+  background-color:white;
+  border-radius: 50%;
+  /* makes them round^^ */
+  margin:5px;
+}
