@@ -16,6 +16,9 @@ body{
   /* makes them round^^ */
   margin:5px;
 }
+.column.empty{
+  cursor:pointer;
+}
 .next-red{
   /* Low opacity red */
   background-color:rgba(255,0,0,0.2);
