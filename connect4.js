@@ -3,6 +3,7 @@ class Connect4{
     this.ROWS=6;
     this.COLUMNS=7;
     this.selector=selector;
+    this.player='red';
     this.createGrid();
     this.setupEventListeners();
   }
@@ -25,8 +26,9 @@ class Connect4{
     }
   }
   setupEventListeners() {
-
-    const $board=$(this.selector);
+    const $board =$(this.selector);
+    const that=this;
+  //  const $board=$(this.selector);
     function findLastEmptyCell(column){
       // finds all the cells in the column that are empty
       const cells= $(`.column[data-column='${column}']`);
@@ -44,12 +46,21 @@ class Connect4{
     $board.on("mouseenter",".column.empty",function(){
       const column=$(this).data('column');
       const $lastEmptyCell=findLastEmptyCell(column);
-      $lastEmptyCell.addClass('next-red')
+      $lastEmptyCell.addClass(`next-${that.player}`)
     //  console.log(column);
     })
 
     $board.on('mouseleave', '.column',function(){
-      $('.column').removeClass('next-red');
+      $('.column').removeClass(`next-${that.player}`);
     })
+    $board.on('click','.column.empty', function(){
+      const col=$(this).data('column');
+      const row=$(this).data('row');
+      const $lastEmptyCell=findLastEmptyCell(col);
+      $lastEmptyCell.removeClass('empty');
+      $lastEmptyCell.addClass(that.player);
+      that.player=(that.player === 'red') ? 'black' :'red';
+
+    });
   }
 }
