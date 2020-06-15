@@ -3,7 +3,7 @@ class Connect4{
     this.ROWS=6;
     this.COLUMNS=7;
     this.selector=selector;
-    this.player='red';
+    this.player='Red';
     this.isGameOver=false;
     this.onPlayerMove = function() {};
     this.createGrid();
@@ -14,7 +14,7 @@ class Connect4{
     const $board = $(this.selector);
     $board.empty();
     this.isGameOver=false;
-    this.player='red';
+    this.player='Red';
     for(let row=0; row<this.ROWS; row++)
     {
       const $row=$('<div>').addClass('row'); //each row will creat this div
@@ -75,7 +75,7 @@ class Connect4{
         $('.column.empty').removeClass('empty');
         return;
       }
-      that.player=(that.player === 'red') ? 'black' :'red';
+      that.player=(that.player === 'Red') ? 'Yellow' :'Red';
       that.onPlayerMove();
       $(this).trigger('mouseenter')
     });

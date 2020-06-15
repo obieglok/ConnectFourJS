@@ -2,7 +2,7 @@ body{
   text-align:center;
 }
 #connect4{
-  background-color: yellow;
+  background-color: blue;
   display: inline-block;
 
 }
@@ -19,16 +19,16 @@ body{
 .column.empty{
   cursor:pointer;
 }
-.next-red{
+.next-Red{
   /* Low opacity red */
-  background-color:rgba(255,0,0,0.2);
+  background-color:rgba(255,0,0,0.7);
 }
-.next-black{
-  background-color: rgba(0,0,0,0.2);
+.next-Yellow{
+  background-color: rgb(255,255,0,0.7);
 }
-.column.red{
+.column.Red{
   background-color: red;
 }
-.column.black{
-  background-color: black;
+.column.Yellow{
+  background-color: yellow;
 }
